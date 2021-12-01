@@ -2,4 +2,6 @@ BMW|X5|35000
 Audi|Q7|45000
 Tesla|Model X Plaid|125000
 Tesla|Model 3 Performance|55000
+BMW|M2|66000
 BMW|M3|66000
+BMW|M6|45000

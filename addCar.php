@@ -16,9 +16,13 @@
 <?php
     if(isset($_POST['sbtn']) && isset($_POST['manufacturer']) && isset($_POST['model']) && isset($_POST['price'])) {
         include_once('./functions.php');
-        if(addCar($_POST['manufacturer'], $_POST['model'], $_POST['price'])) {
-            echo "<div class='status'>Successfully</div>";
-        } else {
+        $result = addCar($_POST['manufacturer'], $_POST['model'], $_POST['price']);
+        if($result == 1) {
+            echo "<div class='status'>Successfully added</div>";
+        } else if ($result == -1) {
+            echo "<div class='status'>This model already exsits</div>";
+        }
+        else {
             echo "<div class='status'>Error</div>";
         }
     }

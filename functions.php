@@ -39,39 +39,22 @@
 
     function addCar($manufacturer, $model, $price) {
         $cars = getCars();
-        var_dump(array_filter($cars, function($item) {
-            global $model;
-            var_dump($model);
+        $result = array_filter($cars, function($item) use ($model) {
             return $item['model'] == $model;
-        }));
-
-        // error_reporting(0);
-        // global $filename;
-        // $fd = fopen($filename, 'a');
-        // if($fd) {
-        //     if(fputs($fd, "$manufacturer|$model|$price\n")) {
-        //         return true;
-        //     }
-        //     fclose($fd);
-        // }
-        // return false;
-    }
-    function addCar2(&$cars, $model, $price, $year)
-    {
-        $filteredArr = array_filter($cars, function($item){
-            global $model;
-            var_dump($model);
-            return $item["model"]==$model;
         });
-        var_dump($filteredArr);
-        // if(count($filteredArr)==0)
-        // {
-        //     $cars[] = ["model"=>$model, "price"=>$price, "year"=>$year];
-        // }
-        // else
-        // echo "<div>Данная машина уже есть в массиве!</div>";
+       
+        if(!$result) {
+            error_reporting(0);
+            global $filename;
+            $fd = fopen($filename, 'a');
+            if($fd) {
+                if(fputs($fd, "$manufacturer|$model|$price\n")) {
+                    return 1; //Success
+                }
+                fclose($fd);
+            }
+            return 0; // Fail
+        }
+        return -1; // Already exsits
     }
-
-    $cars = getCars();
-    addCar2($cars, 'BMW', 'M3', 66000);
 ?>
