@@ -9,7 +9,7 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     background-color: #145a8c;
-    font-family: sans-serif;
+    font-family: Bahnschrift, sans-serif;
     font-weight: lighter;
     display: flex;
     flex-direction: column;
@@ -76,4 +76,9 @@ header a.selected {
 }
 .container .carCard:hover {
     box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
