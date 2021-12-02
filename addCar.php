@@ -1,12 +1,12 @@
 <div class="container">
-    <form action="./addCar.php" method="POST">
-        <label>Manufacturer:
+    <form action="?page=add" method="POST">
+        <label><span>Manufacturer:</span>
             <input type="text" name="manufacturer">
         </label>
-        <label>Model:
+        <label><span>Model:</span>
             <input type="text" name="model">
         </label>
-        <label>Price:
+        <label><span>Price:</span>
             <input type="text" name="price">
         </label>
         <input type="submit" value="Add" name="sbtn">

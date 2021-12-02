@@ -20,7 +20,7 @@
         if(array_key_exists("page", $_GET)) {
             include_once($pages[$_GET["page"]]);
         } else {
-            include_once('./index.php');
+            include_once('./homepage.php');
         }
     ?>
 </body>
